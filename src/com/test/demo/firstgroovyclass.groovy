@@ -1,6 +1,7 @@
+#!/usr/bin/groovy
 package com.test.demo
 
-def checkoutGitRepository(){
+def checkoutGitRepository(repo){
     dir(path) {
         checkout(
             changelog:true,
