@@ -1,6 +1,6 @@
 package com.test.demo
 
-def checkoutGitRepository(path, url, branch, credentialsId = null, poll = true, timeout = 10, depth = 0){
+def checkoutGitRepository(){
     dir(path) {
         checkout(
             changelog:true,
