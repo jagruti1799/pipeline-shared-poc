@@ -1,5 +1,5 @@
 #!/usr/bin/groovy
-package com.test.demo
+package com.test.demo;
 
 class firstgroovyclass {
 static def checkoutGitRepository(repo){
