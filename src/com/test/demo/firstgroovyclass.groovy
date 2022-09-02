@@ -6,7 +6,6 @@ def checkoutGitRepository(repo){
         checkout([$class: 'GitSCM',
 		 branches: [[name: '*/main']],
 		 userRemoteConfigs: [[url: 'https://github.com/jagruti1799/Jenkins-Terraform.git']]])
-         sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
     }
 }
 return this
