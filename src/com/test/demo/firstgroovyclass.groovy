@@ -1,7 +1,7 @@
 #!/usr/bin/groovy
 package com.test.demo
 
-class gitcheckout {
+class firstgroovyclass {
 static def checkoutGitRepository(repo){
     dir(path) {
         checkout([$class: 'GitSCM',
