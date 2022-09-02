@@ -2,7 +2,7 @@
 package com.test.demo
 
 class gitcheckout {
-def checkoutGitRepository(repo){
+static def checkoutGitRepository(repo){
     dir(path) {
         checkout([$class: 'GitSCM',
 		 branches: [[name: '*/main']],
