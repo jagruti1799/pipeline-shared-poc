@@ -22,13 +22,6 @@ pipeline {
  tools { terraform 'terraform' }
  options { timestamps () }
  stages {
-       stage('checkout'){
-           steps {
-                  gitCheckout(
-                      branch: "main",
-                      url: "https://github.com/jagruti1799/Jenkins-Terraform.git")
-                }
-       }
         stage ('terraform init') {
             steps {
                 terraformInit ()
@@ -57,5 +50,10 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            terraformDestroy ()
+        }
+    }  
 }
 
