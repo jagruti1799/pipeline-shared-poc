@@ -1,3 +1,4 @@
+def call {
 def AGENT_LABEL = 'Slave1'
 def terraformInit () {
     sh 'terraform init'
@@ -55,5 +56,6 @@ pipeline {
             terraformDestroy ()
         }
     }  
+}
 }
 
