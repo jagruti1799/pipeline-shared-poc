@@ -1,6 +1,6 @@
 import devops.common.utils
 
-void apply(config) {
+def apply(config) {
   // set terraform env for automation
   env.TF_IN_AUTOMATION = true
 
