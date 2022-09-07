@@ -1,0 +1,33 @@
+@Library('pipeline-shared-poc') 
+var = "Running Scripts"
+echo var
+try {
+node('Slave1') {
+  stage('Checkout') {
+      gitCheckout(
+            branch: "main",
+            url: "https://github.com/jagruti1799/Jenkins-Terraform.git")
+      sh 'echo checkout done'
+      var = "Running script for git checkout"
+      echo var
+   }
+   stage ('Run python script from shared library'){
+        helloWorldExternal()
+        var = "Running Python script from shared library"
+        echo var
+     }
+}
+}
+catch (e) {
+    sh "echo error"
+    throw e
+}
+finally {
+node ('Slave1') {
+        stage ("Run python script from git repository") {
+            sh "python3 helloWorld.py"
+            var = "Running Python script from git repo"
+            echo var
+        }
+    }
+}
