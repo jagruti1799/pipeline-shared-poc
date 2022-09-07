@@ -1,5 +1,5 @@
-def call() {
-    sh "echo hello world"
-  sh "python3 helloworld.py"
+def call(Map config = [:]) {
+    sh "echo hello world ${config.name}. {config.dayOfWeek}."
+    sh "python3 helloworld.py"
 }
   
