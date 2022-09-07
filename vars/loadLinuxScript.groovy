@@ -1,5 +1,5 @@
 def call(name) {
-  def scriptcontents = libraryResource "com/demo/script/linux/${name}"
-  writeFile file: "${name}", text: scriptcontents
-  sh "chmod a+x ./${name}"
+  def scriptcontents = libraryResource "com/demo/script/linux/${config.name}"
+  writeFile file: "${config.name}", text: scriptcontents
+  sh "chmod a+x ./${config.name}"
  }
